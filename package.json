@@ -1,0 +1,9 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Freddy Rangel <frederick.rangel@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+  }
+}
