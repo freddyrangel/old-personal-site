@@ -4,6 +4,25 @@
   "main": "index.js",
   "author": "Freddy Rangel <frederick.rangel@gmail.com>",
   "license": "MIT",
-  "dependencies": {
+  "scripts": {
+    "start:dev": "webpack-dev-server",
+    "build": "webpack"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-es2015": "^7.0.0-beta.53",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "webpack": "^4.28.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
   }
 }
