@@ -1,5 +1,6 @@
 import React from 'react';
+import Layout from 'components/layout';
 
 export default function App() {
-  return <h1>HELLO WORLD!</h1>;
+  return <Layout/>
 }

@@ -8,6 +8,7 @@ module.exports = {
   entry: './entry.js',
   mode: 'development',
   context: sourceDirectory,
+  devtool: 'eval-source-map',
   output: {
     path: targetDirectory,
     filename: 'bundle.js',
@@ -29,6 +30,17 @@ module.exports = {
         include: [sourceDirectory],
         exclude: /node_modules/,
         use: [{ loader: 'babel-loader' }]
+      },
+      {
+          test: /\.(png|jpg|gif|eot|woff|ttf|svg|cur|woff2)$/,
+          include: [sourceDirectory],
+          use: [{
+            loader: 'url-loader',
+            options: {
+              limit: 1000,
+              name: '[hash].[ext]'
+            }
+          }]
       }
     ]
   },
