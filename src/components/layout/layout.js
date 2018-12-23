@@ -11,7 +11,7 @@ const { colors, fontSizes, fonts } = theme;
 
 export default function Layout({ children }) {
   return <div id="root">
-    <GlobalStyle/>
+    <GlobalStyle />
     { children }
   </div>;
 }
