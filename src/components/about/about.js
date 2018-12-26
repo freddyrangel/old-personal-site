@@ -2,10 +2,13 @@ import React, { Component }                       from 'react';
 import SR                                         from 'scrollreveal';
 import styled                                     from 'styled-components';
 import { srConfig }                               from 'utils';
-import avatar                                     from 'images/devweek.jpg'
 import { Section, Heading, mixins, media, theme } from 'styles';
+import avatar                                     from 'images/devweek.jpg'
+import Skills                                     from './skills';
 
-const { colors, fontSizes, fonts, borderRadius, transition } = theme;
+const {
+  colors, fontSizes, borderRadius, transition, fonts: { SFMono }
+} = theme;
 
 const AboutContainer = styled(Section)`
   position: relative;
@@ -24,13 +27,6 @@ const ContentContainer = styled.div`
   a {
     ${mixins.inlineLink};
   }
-`;
-
-const SkillsContainer = styled.ul`
-  display: grid;
-  grid-template-columns: repeat(2, minmax(140px, 200px));
-  overflow: hidden;
-  margin-top: 20px;
 `;
 
 const PicContainer = styled.div`
@@ -114,8 +110,7 @@ export default class About extends Component {
       <FlexContainer>
         <ContentContainer>
           <Description />
-          <SkillsContainer>
-          </SkillsContainer>
+          <Skills />
         </ContentContainer>
         <PicContainer>
           <AvatarContainer>
