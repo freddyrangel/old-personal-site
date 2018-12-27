@@ -260,10 +260,6 @@ const GlobalStyle = createGlobalStyle`
     list-style: none;
   }
 
-  .gatsby-image-outer-wrapper {
-    height: 100%;
-  }
-
   .fadeup-enter {
     opacity: 0.01;
     transform: translateY(20px);
