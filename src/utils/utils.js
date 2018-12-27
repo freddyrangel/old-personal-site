@@ -15,6 +15,20 @@ function srConfig(delay = 200) {
     viewOffset: { top: 0, right: 0, bottom: 0, left: 0 }
   };
 }
+
+function throttle(func, wait = 100) {
+  let timer = null;
+  return function(...args) {
+    if (timer === null) {
+      timer = setTimeout(() => {
+        func.apply(this, args);
+        timer = null;
+      }, wait)
+    }
+  }
+}
+
 export {
-  srConfig
+  srConfig,
+  throttle
 };

@@ -1,20 +1,28 @@
-import React            from 'react';
-import styled           from 'styled-components';
-import Layout           from 'components/layout';
-import About            from 'components/about';
-import Career           from 'components/career';
-import { mixins, Main } from 'styles';
+import React                              from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import styled                             from 'styled-components';
+import Layout                             from 'components/layout';
+import About                              from 'components/about';
+import Career                             from 'components/career';
+import { mixins, Main }                   from 'styles';
 
 const MainContainer = styled(Main)`
     ${mixins.sidePadding};
     counter-reset: section;
 `;
 
-export default function App() {
-  return <Layout>
-    <MainContainer>
-      <About />
-      <Career />
+function FullLayout(props) {
+  return <Layout { ...props }>
+    <MainContainer { ...props }>
+      <About { ...props }/>
+      <Career { ...props }/>
     </MainContainer>
-  </Layout>;
+  </Layout>
+}
+
+export default function App() {
+  return <Router>
+    <Route path='/' component={ FullLayout }>
+    </Route>
+  </Router>;
 }

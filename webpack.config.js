@@ -31,16 +31,23 @@ module.exports = {
         exclude: /node_modules/,
         use: [{ loader: 'babel-loader' }]
       },
+      //{
+        //test: /\.svg$/,
+        //include: [sourceDirectory],
+        //exclude: /node_modules/,
+        //use: [{ loader: 'svg-inline-loader' }]
+      //},
       {
-          test: /\.(png|jpg|gif|eot|woff|ttf|svg|cur|woff2)$/,
-          include: [sourceDirectory],
-          use: [{
-            loader: 'url-loader',
-            options: {
-              limit: 1000,
-              name: '[hash].[ext]'
-            }
-          }]
+        test: /\.(pdf|svg|png|jpg|gif|eot|woff|ttf|cur|woff2)$/,
+        include: [sourceDirectory],
+        exclude: /node_modules/,
+        use: [{
+          loader: 'url-loader',
+          options: {
+            limit: 1000,
+            name: '[hash].[ext]'
+          }
+        }]
       }
     ]
   },

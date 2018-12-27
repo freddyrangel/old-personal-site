@@ -3,7 +3,7 @@ import SR                                         from 'scrollreveal';
 import styled                                     from 'styled-components';
 import { srConfig }                               from 'utils';
 import { Section, Heading, mixins, media, theme } from 'styles';
-import avatar                                     from 'images/devweek.jpg'
+import avatar                                     from 'content/devweek.jpg'
 import Skills                                     from './skills';
 
 const {

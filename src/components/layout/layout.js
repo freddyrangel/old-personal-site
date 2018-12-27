@@ -9,9 +9,10 @@ import { GlobalStyle, theme } from 'styles';
 
 const { colors, fontSizes, fonts } = theme;
 
-export default function Layout({ children }) {
+export default function Layout({ children, location }) {
   return <div id="root">
     <GlobalStyle />
+    <Header location={ location }/>
     { children }
   </div>;
 }
