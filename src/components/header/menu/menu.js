@@ -84,7 +84,7 @@ class Menu extends Component {
   };
 
   render() {
-    const { isHome, menuOpen, navLinks, handleMenuClick } = this.props;
+    const { menuOpen, navLinks, handleMenuClick } = this.props;
 
     return (
       <MenuContainer
@@ -94,16 +94,14 @@ class Menu extends Component {
         tabIndex={menuOpen ? 1 : -1}>
         <Sidebar>
           <NavLinks>
-            {isHome && (
-              <NavList>
-                {navLinks &&
-                  navLinks.map(({ url, name }, i) => (
-                    <NavListItem key={i}>
-                      <NavLink href={url}>{name}</NavLink>
-                    </NavListItem>
-                  ))}
-              </NavList>
-            )}
+            <NavList>
+              {navLinks &&
+                navLinks.map(({ url, name }, i) => (
+                  <NavListItem key={i}>
+                    <NavLink href={url}>{name}</NavLink>
+                  </NavListItem>
+                ))}
+            </NavList>
             <ResumeLink href={resume} target="_blank" rel="nofollow noopener noreferrer">
               Resume
             </ResumeLink>
