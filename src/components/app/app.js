@@ -6,6 +6,7 @@ import Hero                               from 'components/hero';
 import About                              from 'components/about';
 import Career                             from 'components/career';
 import Featured                           from 'components/featured';
+import Contact                            from 'components/contact';
 import data                               from 'content/site-data';
 import { mixins, Main }                   from 'styles';
 
@@ -22,6 +23,7 @@ function FullLayout(props) {
       <About { ...appProps }/>
       <Career { ...appProps }/>
       <Featured { ...appProps }/>
+      <Contact { ...appProps }/>
     </MainContainer>
   </Layout>
 }

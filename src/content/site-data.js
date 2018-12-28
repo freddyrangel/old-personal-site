@@ -68,8 +68,22 @@ export default {
       coverImage: 'react-101.png',
       githubUrl: 'https://github.com/modern-front-end/react-101',
       externalLink: 'https://modern-front-end.github.io/react-101/',
-      description: 'A short, single day workshop of the basics of React',
+      description: 'A short, single day workshop on the basics of React.',
       techList: []
+    },
+  ],
+  socialMedia: [
+    {
+      name: 'Github',
+      url: 'https://github.com/freddyrangel',
+    },
+    {
+      name: 'Linkedin',
+      url: 'https://www.linkedin.com/in/frederickrangel/',
+    },
+    {
+      name: 'Twitter',
+      url: 'https://twitter.com/frangel85',
     },
   ]
 }
