@@ -5,8 +5,8 @@
   "author": "Freddy Rangel <frederick.rangel@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start:dev": "webpack-dev-server",
-    "build": "webpack"
+    "start": "webpack-dev-server --config ./webpack-config/dev.js",
+    "build": "webpack -p --config ./webpack-config/prod.js"
   },
   "babel": {
     "presets": [
@@ -41,6 +41,7 @@
     "url-loader": "^1.1.2",
     "webpack": "^4.28.1",
     "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.10"
+    "webpack-dev-server": "^3.1.10",
+    "webpack-merge": "^4.1.5"
   }
 }

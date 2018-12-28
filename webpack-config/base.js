@@ -1,14 +1,11 @@
 const { resolve }                 = require('path');
-const HtmlWebpackPlugin           = require('html-webpack-plugin');
 const DirectoryNamedWebpackPlugin = require('directory-named-webpack-plugin');
 const sourceDirectory             = resolve('src');
 const targetDirectory             = resolve('build');
 
 module.exports = {
   entry: './entry.js',
-  mode: 'development',
   context: sourceDirectory,
-  devtool: 'eval-source-map',
   output: {
     path: targetDirectory,
     filename: 'bundle.js',
