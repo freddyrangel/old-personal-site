@@ -5,6 +5,8 @@ import Layout                             from 'components/layout';
 import Hero                               from 'components/hero';
 import About                              from 'components/about';
 import Career                             from 'components/career';
+import Featured                           from 'components/featured';
+import data                               from 'content/site-data';
 import { mixins, Main }                   from 'styles';
 
 const MainContainer = styled(Main)`
@@ -13,18 +15,19 @@ const MainContainer = styled(Main)`
 `;
 
 function FullLayout(props) {
-  return <Layout { ...props }>
-    <MainContainer { ...props }>
-      <Hero { ...props }/>
-      <About { ...props }/>
-      <Career { ...props }/>
+  const appProps = Object.assign({}, props, { data });
+  return <Layout { ...appProps }>
+    <MainContainer { ...appProps }>
+      <Hero { ...appProps }/>
+      <About { ...appProps }/>
+      <Career { ...appProps }/>
+      <Featured { ...appProps }/>
     </MainContainer>
   </Layout>
 }
 
 export default function App() {
   return <Router>
-    <Route path='/' component={ FullLayout }>
-    </Route>
+    <Route path='/' component={ FullLayout }/>
   </Router>;
 }

@@ -6,53 +6,6 @@ import { srConfig }                               from 'utils';
 
 const { colors, fonts, fontSizes } = theme;
 
-const careerData = [
-  {
-    company: 'Science Exchange',
-    fromTo: 'March 2017 - February 2018',
-    title: 'Senior Full Stack Software Engineer',
-    accomplishments: [
-      'Optimized search experience by forming a Marketplace and Discovery Team consisting of key stakeholders from different departments',
-      'Improved maintainability of front-end by migrating from jQuery & Ember to test- driven React',
-      'Implemented JavaScript error reporting which identified critical issues for our enterprise clients',
-      'Improved web accessibility (a11y) by instituting a thorough audit process',
-      'Advanced engineering standards by compiling an engineering handbook and streamlining on-call processes',
-      'Conducted team workshops on JavaScript topics'
-    ]
-  },
-  {
-    company: 'HelloSign',
-    fromTo: 'June 2015 - March 2017',
-    title: 'Senior Front End Engineer',
-    accomplishments: [
-      'Improved JavaScript runtime performance by a factor of 15',
-      'Reduced initial browser load-time from 4.5 seconds to 200 milliseconds',
-      'Helped build HelloWorks, a new signature product based on an event-driven architecture',
-      'Gave talks and workshops for developer conferences all over the US'
-    ]
-  },
-  {
-    company: 'Velocis',
-    fromTo: 'August 2014 - June 2015',
-    title: 'Software Developer',
-    accomplishments: [
-      'Refactored large legacy enterprise systems using TDD and increased test coverage from 0 to 85 percent while adding new features',
-      'Architected and built backend JSON APIs for web, hybrid, and native applications',
-      'Built a social networking application (SkyRise) connecting office tenants into online communities',
-      'Taught other developers how to write and maintain test suites'
-    ]
-  },
-  {
-    company: 'TechLabs',
-    fromTo: 'December 2013 - July 2014',
-    title: 'Software Developer',
-    accomplishments: [
-      'Designed and build a modular medical appointment scheduling app using Ruby on Rails',
-      'Extracted major features into reusable components via Rails engines to build an e-commerce platform and a direct sales support application'
-    ]
-  }
-];
-
 const CareerContainer = styled(Section)`
   position: relative;
   max-width: 700px;
@@ -200,9 +153,9 @@ const Highlighter = styled.span`
   `};
 `;
 
-function Tabs({ careerData = [], activeTabId, handleClick, isActive }) {
+function Tabs({ experience = [], activeTabId, handleClick, isActive }) {
 
-  const tabItems = careerData.map((data, i) => {
+  const tabItems = experience.map((data, i) => {
     const isTabActive = isActive(i)
     const tabItemProps = {
       key: i,
@@ -218,7 +171,7 @@ function Tabs({ careerData = [], activeTabId, handleClick, isActive }) {
     return <TabItem { ...tabItemProps }>{ data.company }</TabItem>;
   });
 
-  const content = careerData && careerData.map((data, i) => {
+  const content = experience && experience.map((data, i) => {
     const tabContentProps = {
       key: i,
       isActive: isActive(i),
@@ -269,10 +222,11 @@ export default class Career extends Component {
   setActiveTab = (activeTabId) => this.setState({ activeTabId });
 
   render() {
+    const { data: { experience } } = this.props;
 
     return <CareerContainer id="experience" ref={el => (this.career = el)}>
       <Heading>Work History</Heading>
-      <Tabs { ...this.state } { ...this.props } careerData={ careerData } handleClick={ this.setActiveTab } isActive={ this.isActive }/>
+      <Tabs { ...this.state } { ...this.props } experience={ experience } handleClick={ this.setActiveTab } isActive={ this.isActive }/>
     </CareerContainer>;
   }
 }

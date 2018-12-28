@@ -1,11 +1,9 @@
 import React, { Component }               from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import siteData                           from 'content/site-data';
 import styled                             from 'styled-components';
 import { theme, mixins, media, Section }  from 'styles';
 
 const { colors, fontSizes, fonts } = theme;
-const { email } = siteData;
 
 const HeroContainer = styled(Section)`
   ${mixins.flexCenter};
@@ -75,6 +73,7 @@ class Hero extends Component {
   render() {
     const { data } = this.props;
     const { isMounted } = this.state;
+    const { email } = data;
 
     const one = () => <Hi style={{ transitionDelay: '100ms' }}>Hi, my name is</Hi>;
     const two = () => <Name style={{ transitionDelay: '200ms' }}>Freddy Rangel.</Name>;
