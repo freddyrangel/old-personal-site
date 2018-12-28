@@ -1,5 +1,9 @@
 export default {
   email: 'frederick.rangel@gmail.com',
+  hero: {
+    subtitle: 'Software Engineer and Author.',
+    description: 'I am a senior software engineer, contributor to React, and author of "React Under the Hood: A Beginner\'s Guide". I specialize in building real-world, business critical applications.'
+  },
   experience: [
     {
       company: 'Science Exchange',

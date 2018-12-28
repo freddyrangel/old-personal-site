@@ -73,16 +73,16 @@ class Hero extends Component {
   render() {
     const { data } = this.props;
     const { isMounted } = this.state;
-    const { email } = data;
+    const { email, hero: { subtitle, description } } = data;
 
     const one = () => <Hi style={{ transitionDelay: '100ms' }}>Hi, my name is</Hi>;
     const two = () => <Name style={{ transitionDelay: '200ms' }}>Freddy Rangel.</Name>;
     const three = () => (
-      <Subtitle style={{ transitionDelay: '300ms' }}>I sling code for a living.</Subtitle>
+      <Subtitle style={{ transitionDelay: '300ms' }}>{ subtitle }</Subtitle>
     );
     const four = () => (
       <Blurb style={{ transitionDelay: '400ms' }}>
-        <p>I'm a software engineer in the San Francisco Bay Area specializing in building real-world, business critical applications.</p>
+        <p>{ description }</p>
       </Blurb>
     );
     const five = () => (

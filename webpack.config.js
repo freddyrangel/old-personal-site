@@ -14,15 +14,6 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: '/build/'
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: 'Freddy Rangel | Software Engineer',
-      template: 'templates/dev.html',
-      showErrors: true,  // set to false in production
-      hash: false, // set to true in production
-      minifi: false // set to true in production
-    })
-  ],
   module: {
     rules: [
       {
@@ -31,12 +22,6 @@ module.exports = {
         exclude: /node_modules/,
         use: [{ loader: 'babel-loader' }]
       },
-      //{
-        //test: /\.svg$/,
-        //include: [sourceDirectory],
-        //exclude: /node_modules/,
-        //use: [{ loader: 'svg-inline-loader' }]
-      //},
       {
         test: /\.(pdf|svg|png|jpg|gif|eot|woff|ttf|cur|woff2)$/,
         include: [sourceDirectory],
