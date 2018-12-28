@@ -92,13 +92,6 @@ const AvatarContainer = styled.div`
   }
 `;
 
-function Description() {
-  return <p>
-    I'm a software engineer, contributor to React, and author of "React Under the Hood: A Beginner's Guide". I'm an expert on React, Redux, ES6, functional programming, and D3. I'm a regular speaker at conferences and occasionally teach JavaScript workshops in San Francisco and other cities.
-  </p>;
-
-}
-
 export default class About extends Component {
   componentDidMount() {
     SR().reveal(this.about, srConfig());
@@ -109,7 +102,7 @@ export default class About extends Component {
       <Heading>About Me</Heading>
       <FlexContainer>
         <ContentContainer>
-          <Description />
+          <p>{ this.props.data.about.description }</p>
           <Skills />
         </ContentContainer>
         <PicContainer>
